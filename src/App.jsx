@@ -14,7 +14,11 @@ function App() {
   });
 
   const [activeReminder, setActiveReminder] = useState(null);
-  const [lastSpokenId, setLastSpokenId] = useState(null); // ✅ track last spoken reminder
+  const [lastSpokenId, setLastSpokenId] = useState(null); 
+
+
+  const VOICE_API_KEY = import.meta.env.VITE_VOICE_KEY;
+
 
   // Save reminders to localStorage whenever updated
   useEffect(() => {
@@ -65,7 +69,7 @@ function App() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "xi-api-key": "75da0870d6f5cc4c9cfbe5b5d168653708f309b639aa67250c00e8941a9c41e7",
+            "xi-api-key": VOICE_API_KEY,
             "Accept": "audio/mpeg",
           },
           body: JSON.stringify({

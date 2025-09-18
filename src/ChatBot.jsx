@@ -7,7 +7,8 @@ function ChatBot() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "b25e54c2c1644011a1d9045653f67b17";
+  const API_KEY = import.meta.env.VITE_CHAT_API_KEY;
+
 
   const predefinedQuestions = [
     "What to do if I miss a dose?",
